@@ -1,5 +1,6 @@
-package com.szarawara.jakub.MZStats.data;
+package com.szarawara.jakub.MZStats.calculation;
 
+import com.szarawara.jakub.MZStats.data.Result;
 import org.json.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -58,6 +59,8 @@ public class MatchResult {
             result.colour = "żółty";
             result.result = getResult(team1Goals - team2Goals);
             result.opponentId = team2Id;
+            result.opponentMentality = team2Node.getAttributes().getNamedItem("playstyle").getNodeValue();
+            result.opponentPressing = team2Node.getAttributes().getNamedItem("aggression").getNodeValue();
         } else {
             result.mentality = team2Node.getAttributes().getNamedItem("playstyle").getNodeValue();
             result.pressing = team2Node.getAttributes().getNamedItem("aggression").getNodeValue();
@@ -65,6 +68,8 @@ public class MatchResult {
             result.colour = "czarny";
             result.result = getResult(team2Goals - team1Goals);
             result.opponentId = team1Id;
+            result.opponentMentality = team1Node.getAttributes().getNamedItem("playstyle").getNodeValue();
+            result.opponentPressing = team1Node.getAttributes().getNamedItem("aggression").getNodeValue();
         }
         Result.Team homeTeam = new Result.Team();
         Result.Team awayTeam = new Result.Team();

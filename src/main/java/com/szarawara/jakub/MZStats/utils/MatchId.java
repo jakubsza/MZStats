@@ -1,4 +1,4 @@
-package com.szarawara.jakub.MZStats.data;
+package com.szarawara.jakub.MZStats.utils;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;

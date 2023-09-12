@@ -1,8 +1,9 @@
 package com.szarawara.jakub.MZStats.excel;
 
-import com.szarawara.jakub.MZStats.data.MatchResult;
+import com.szarawara.jakub.MZStats.calculation.MatchResult;
 import com.szarawara.jakub.MZStats.data.Result;
-import com.szarawara.jakub.MZStats.data.Value;
+import com.szarawara.jakub.MZStats.calculation.Value;
+import org.springframework.stereotype.Component;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -10,6 +11,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
+@Component
 public class ExcelGenerator {
 
     private ExcelDataBuilder excelDataBuilder;
@@ -40,6 +42,7 @@ public class ExcelGenerator {
         excelDataBuilder.writeOpponentColour(result.opponentColour);
         excelDataBuilder.writeMatchLink(result.matchUrl);
         excelDataBuilder.writeTactic(result.mentality, result.pressing);
+        excelDataBuilder.writeOpponentTactic(result.opponentMentality, result.opponentPressing);
     }
 
     private void saveExcel() throws IOException {

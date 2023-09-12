@@ -7,6 +7,8 @@ public class Result {
     public String opponentColour;
     public String mentality;
     public String pressing;
+    public String opponentMentality;
+    public String opponentPressing;
     public String matchUrl;
     public String opponentId;
 

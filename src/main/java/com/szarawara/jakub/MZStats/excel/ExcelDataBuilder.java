@@ -19,7 +19,6 @@ public class ExcelDataBuilder {
 
     private Workbook workbook;
     private Sheet sheet;
-//    private List<Row> rows = new ArrayList<>();
     private List<byte[]> images = new ArrayList<>();
 
     private List<Integer> imagesInt = new ArrayList<>();
@@ -75,6 +74,11 @@ public class ExcelDataBuilder {
     public void writeTactic(String mentality, String pressing) {
         row.createCell(11).setCellValue(mentality);
         row.createCell(12).setCellValue(pressing);
+    }
+
+    public void writeOpponentTactic(String mentality, String pressing) {
+        row.createCell(13).setCellValue(mentality);
+        row.createCell(14).setCellValue(pressing);
     }
 
     public void addPictures() {

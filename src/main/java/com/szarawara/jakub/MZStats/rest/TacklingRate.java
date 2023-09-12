@@ -11,11 +11,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController
-public class GoalRate {
+public class TacklingRate {
 
-    @PostMapping(path = "/goalRate/{id}")
-    public double getGoalRate(@RequestBody String body, @PathVariable String id, @RequestParam(required = false) String teamId) throws ParserConfigurationException, IOException, InterruptedException, SAXException {
+    @PostMapping(path = "/tacklingRate/{id}")
+    public double getTacklingRate(@RequestBody String body, @PathVariable String id, @RequestParam(required = false) String teamId) throws ParserConfigurationException, IOException, InterruptedException, SAXException {
         List<String> matchIds = new ArrayList<>();
         if (teamId != null) {
             matchIds = MatchId.getMatchIdsFromMZUrl(teamId);

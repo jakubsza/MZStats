@@ -1,4 +1,4 @@
-package com.szarawara.jakub.MZStats.data;
+package com.szarawara.jakub.MZStats.calculation;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -26,6 +26,9 @@ public class Value {
             return "MZspy does not get opponent value";
         }
         Element table = doc.getElementById(MAIN_CONTENT_TABLE);
+        if (table == null) {
+            return "MZspy does not get opponent value";
+        }
         Elements tds = table.getElementsByTag("td");
         Optional<String> value = tds.stream().map(Element::ownText).filter(val -> val.contains("EUR")).findFirst();
         if (value.isEmpty()) {

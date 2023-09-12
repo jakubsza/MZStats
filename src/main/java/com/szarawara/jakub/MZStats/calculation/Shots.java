@@ -1,6 +1,7 @@
-package com.szarawara.jakub.MZStats.data;
+package com.szarawara.jakub.MZStats.calculation;
 
-import com.szarawara.jakub.MZStats.WalkoverException;
+import com.szarawara.jakub.MZStats.data.PlayerStatistics;
+import com.szarawara.jakub.MZStats.exceptions.WalkoverException;
 import org.json.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -8,7 +9,6 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static com.szarawara.jakub.MZStats.utils.XmlUtils.*;
